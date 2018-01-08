@@ -18,7 +18,14 @@ class Program
         case gets.chomp
         when '1'
           system 'clear'
-	#show_all_person
+          people = @operations.show_all_person
+          i=0
+          while i < people.size
+            unless people.at(i).nil?
+              puts("id #{i}: #{people[i]}")
+            end
+            i += 1
+          end
           gets.chomp
         when '2'
           system 'clear'
