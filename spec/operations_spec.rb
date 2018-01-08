@@ -177,7 +177,7 @@ RSpec.describe 'Operation' do
     it 'does not edit renting that does not exist' do
       expect { operations.edit_renting(5, '2018-01-20', '10') }.not_to raise_error
     end
-  end 
+  end
 
   context '#remove_person' do
     it 'correctly removes person' do
@@ -196,7 +196,7 @@ RSpec.describe 'Operation' do
       expect { operations.remove_account(2) }.not_to raise_error
     end
   end
-  
+
   context '#remove_car' do
     it 'correctly removes car' do
       expect { operations.remove_car(0) }.not_to raise_error
@@ -214,5 +214,4 @@ RSpec.describe 'Operation' do
       expect { operations.remove_renting(2) }.not_to raise_error
     end
   end
-  
 end

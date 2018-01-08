@@ -19,7 +19,7 @@ class Operations
     phone- #{@@tperson[id].phone}."
   end
 
- def add_account(login, email, person)
+  def add_account(login, email, person)
     size = @@taccount.size
     id = 0
     id += 1 while id < size && !@@taccount[id].nil?
@@ -30,7 +30,7 @@ class Operations
     email - #{email}."
   end
 
- def add_renting(date, days, car, account)
+  def add_renting(date, days, car, account)
     size = @@trenting.size
     id = 0
     id += 1 while id < size && !@@trenting[id].nil?
@@ -68,6 +68,18 @@ class Operations
     return @@tperson
   end
 
+  def show_all_account
+    return @@taccount
+  end
+
+  def show_all_car
+    return @@tcar
+  end
+
+  def show_all_renting
+    return @@trenting
+  end
+
   def show_account(id)
     if !@@taccount.at(id).nil?
       puts "Account with id = #{id}: #{@@taccount[id]}"
@@ -76,10 +88,6 @@ class Operations
       puts "Account with id = #{id} does not exist."
       return false
     end
-  end
-
-  def show_all_account
-    return @@taccount
   end
 
   def show_car(id)
@@ -92,10 +100,6 @@ class Operations
     end
   end
 
-  def show_all_car
-    return @@tcar
-  end
-
   def show_renting(id)
     if !@@trenting.at(id).nil?
       puts "Renting with id = #{id}: #{@@trenting[id]}"
@@ -103,76 +107,6 @@ class Operations
     else
       puts "Renting with id = #{id} does not exist."
       return false
-    end
-  end
-
-  def show_all_renting
-    return @@trenting
-  end
-
-  def edit_person(id, name, lastname, phone)
-    if !@@tperson.at(id).nil?
-      if(name!='' || lastname!='' || phone!='')
-        @@tperson[id].name = name if name!=''
-        @@tperson[id].lastname = lastname if lastname!=''
-        @@tperson[id].phone = phone if phone!=''
-        puts "Updated person with id = #{@@tperson[id].id}."
-        return @@tperson[id]
-      else
-        return false
-      end
-    else
-      puts "Person with id = #{id} does not exist."
-        return false
-    end
-  end
- 
-  def edit_account(id, login, email)
-    if !@@taccount.at(id).nil?
-      if(login!='' || email!='')
-        @@taccount[id].login = login if login!=''
-        @@taccount[id].email = email if email!=''
-        puts "Updated account with id = #{@@taccount[id].id}."
-        return @@taccount[id]
-      else
-        return false
-      end
-    else
-      puts "Account with id = #{id} does not exist."
-        return false
-    end
-  end
-
-  def edit_car(id, brand, model, price)
-    if !@@tcar.at(id).nil?
-      if(brand!='' || model!='' || price!='')
-        @@tcar[id].brand = brand if brand!=''
-        @@tcar[id].model = model if model!=''
-        @@tcar[id].price = price if price!=''
-        puts "Updated car with id = #{@@tcar[id].id}."
-        return @@tcar[id]
-      else
-        return false
-      end
-    else
-      puts "Car with id = #{id} does not exist."
-        return false
-    end
-  end
-
-  def edit_renting(id, date, days)
-    if !@@trenting.at(id).nil?
-      if(date!='' || days!='')
-        @@trenting[id].date = date if date!=''
-        @@trenting[id].days = days if days!=''
-        puts "Updated renting with id = #{@@trenting[id].id}."
-        return @@trenting[id]
-      else
-        return false
-      end
-    else
-      puts "Renting with id = #{id} does not exist."
-        return false
     end
   end
 
@@ -209,6 +143,72 @@ class Operations
       puts "Removed renting with id = #{id}."
     else
       puts "Renting with id = #{id} does not exist."
+    end
+  end
+
+  def edit_person(id, name, lastname, phone)
+    if !@@tperson.at(id).nil?
+      if name != '' || lastname != '' || phone != ''
+        @@tperson[id].name = name if name != ''
+        @@tperson[id].lastname = lastname if lastname != ''
+        @@tperson[id].phone = phone if phone != ''
+        puts "Updated person with id = #{@@tperson[id].id}."
+        return @@tperson[id]
+      else
+        return false
+      end
+    else
+      puts "Person with id = #{id} does not exist."
+      return false
+    end
+  end
+
+  def edit_account(id, login, email)
+    if !@@taccount.at(id).nil?
+      if login != '' || email != ''
+        @@taccount[id].login = login if login != ''
+        @@taccount[id].email = email if email != ''
+        puts "Updated account with id = #{@@taccount[id].id}."
+        return @@taccount[id]
+      else
+        return false
+      end
+    else
+      puts "Account with id = #{id} does not exist."
+      return false
+    end
+  end
+
+  def edit_car(id, brand, model, price)
+    if !@@tcar.at(id).nil?
+      if brand != '' || model != '' || price != ''
+        @@tcar[id].brand = brand if brand != ''
+        @@tcar[id].model = model if model != ''
+        @@tcar[id].price = price if price != ''
+        puts "Updated car with id = #{@@tcar[id].id}."
+        return @@tcar[id]
+      else
+        return false
+      end
+    else
+      puts "Car with id = #{id} does not exist."
+      return false
+    end
+  end
+
+  def edit_renting(id, date, days)
+    if !@@trenting.at(id).nil?
+      if date != '' || days != ''
+        @@trenting[id].date = date if date != ''
+        @@trenting[id].days = days if days != ''
+        puts "Updated renting with id = #{@@trenting[id].id}."
+        return @@trenting[id]
+      else
+        return false
+      end
+    else
+      puts "Renting with id = #{id} does not exist."
+      return false
     end
   end
 end
