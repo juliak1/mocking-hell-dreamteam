@@ -133,4 +133,19 @@ RSpec.describe 'Operation' do
       expect { operations.edit_person(7, 'Pawel', 'Kowalski', '111222333') }.not_to raise_error
     end
   end
+
+  context '#edit_account' do
+    it 'correctly edits account' do
+      expect { operations.edit_account(0, 'mkowalski', 'mkowalski@yahoo.com') }.not_to raise_error
+    end
+    it 'correctly edits account data with only one value' do
+      expect(operations.edit_account(0, '', 'mkowal@gmail.com').to_s).to include('mkowalski')
+    end
+    it 'does not edit account when data is invalid' do
+      expect(operations.edit_account(0, '', '')).to be false
+    end
+    it 'does not edit person that does not exist' do
+      expect { operations.edit_account(7, 'mkowalski', 'mkowalski@yahoo.com') }.not_to raise_error
+    end
+  end
 end

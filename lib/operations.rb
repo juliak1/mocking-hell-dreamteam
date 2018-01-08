@@ -126,4 +126,20 @@ class Operations
         return false
     end
   end
+ 
+  def edit_account(id, login, email)
+    if !@@taccount.at(id).nil?
+      if(login!='' || email!='')
+        @@taccount[id].login = login if login!=''
+        @@taccount[id].email = email if email!=''
+        puts "Updated account with id = #{@@taccount[id].id}."
+        return @@taccount[id]
+      else
+        return false
+      end
+    else
+      puts "Account with id = #{id} does not exist."
+        return false
+    end
+  end
 end
