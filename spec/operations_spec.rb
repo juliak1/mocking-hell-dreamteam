@@ -103,4 +103,13 @@ RSpec.describe 'Operation' do
       expect { operations.show_all_car }.not_to raise_error
     end
   end
+
+  context '#show_renting' do
+    it 'correctly shows renting' do
+      expect { operations.show_renting(0) }.not_to raise_error
+    end
+    it 'does not show renting that does not exist' do
+      expect { operations.show_renting(2) }.not_to raise_error
+    end
+  end
 end

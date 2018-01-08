@@ -95,4 +95,15 @@ class Operations
   def show_all_car
     return @@tcar
   end
+
+  def show_renting(id)
+    if !@@trenting.at(id).nil?
+      puts "Renting with id = #{id}: #{@@trenting[id]}"
+      return @@trenting[id]
+    else
+      puts "Renting with id = #{id} does not exist."
+      return false
+    end
+  end
+
 end
