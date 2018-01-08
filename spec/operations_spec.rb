@@ -97,4 +97,10 @@ RSpec.describe 'Operation' do
       expect { operations.show_car(2) }.not_to raise_error
     end
   end
+
+  context '#show_all_car' do
+    it 'correctly shows all records in car' do
+      expect { operations.show_all_car }.not_to raise_error
+    end
+  end
 end

@@ -91,4 +91,8 @@ class Operations
       return false
     end
   end
+
+  def show_all_car
+    return @@tcar
+  end
 end
