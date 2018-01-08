@@ -148,4 +148,19 @@ RSpec.describe 'Operation' do
       expect { operations.edit_account(7, 'mkowalski', 'mkowalski@yahoo.com') }.not_to raise_error
     end
   end
+
+  context '#edit_car' do
+    it 'correctly edits car' do
+      expect { operations.edit_car(0, 'Nissan', 'GT-R', '200') }.not_to raise_error
+    end
+    it 'correctly edits car data with only one value' do
+      expect(operations.edit_car(0, '', '206', '').to_s).to include('Nissan')
+    end
+    it 'does not edit car when data is invalid' do
+      expect(operations.edit_car(0, '', '', '')).to be false
+    end
+    it 'does not edit car that does not exist' do
+      expect { operations.edit_car(5, 'Nissan', 'GT-R', '200') }.not_to raise_error
+    end
+  end
 end

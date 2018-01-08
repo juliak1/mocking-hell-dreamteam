@@ -142,4 +142,21 @@ class Operations
         return false
     end
   end
+
+  def edit_car(id, brand, model, price)
+    if !@@tcar.at(id).nil?
+      if(brand!='' || model!='' || price!='')
+        @@tcar[id].brand = brand if brand!=''
+        @@tcar[id].model = model if model!=''
+        @@tcar[id].price = price if price!=''
+        puts "Updated car with id = #{@@tcar[id].id}."
+        return @@tcar[id]
+      else
+        return false
+      end
+    else
+      puts "Car with id = #{id} does not exist."
+        return false
+    end
+  end
 end
