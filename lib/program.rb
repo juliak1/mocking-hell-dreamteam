@@ -78,7 +78,14 @@ class Program
         case gets.chomp
         when '1'
           system 'clear'
-	#show_all_account
+          accounts = @operations.show_all_account
+          i=0
+          while i < accounts.size
+            unless accounts.at(i).nil?
+              puts("id #{i}: #{accounts[i]}")
+            end
+            i += 1
+          end
           gets.chomp
         when '2'
           system 'clear'
