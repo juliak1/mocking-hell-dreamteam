@@ -106,4 +106,7 @@ class Operations
     end
   end
 
+  def show_all_renting
+    return @@trenting
+  end
 end

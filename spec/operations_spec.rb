@@ -112,4 +112,10 @@ RSpec.describe 'Operation' do
       expect { operations.show_renting(2) }.not_to raise_error
     end
   end
+
+  context '#show_all_renting' do
+    it 'correctly shows all records in renting' do
+      expect { operations.show_all_renting }.not_to raise_error
+    end
+  end
 end
