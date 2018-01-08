@@ -197,4 +197,12 @@ RSpec.describe 'Operation' do
     end
   end
   
+  context '#remove_car' do
+    it 'correctly removes car' do
+      expect { operations.remove_car(0) }.not_to raise_error
+    end
+    it 'does not remove car that does not exist' do
+      expect { operations.remove_car(2) }.not_to raise_error
+    end
+  end
 end

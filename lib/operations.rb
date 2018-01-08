@@ -193,4 +193,13 @@ class Operations
       puts "Account with id = #{id} does not exist."
     end
   end
+
+    def remove_car(id)
+    if !@@tcar.at(id).nil?
+      @@tcar[id] = nil
+      puts "Removed car with id = #{id}."
+    else
+      puts "Car with id = #{id} does not exist."
+    end
+  end
 end
