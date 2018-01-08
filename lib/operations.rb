@@ -109,4 +109,21 @@ class Operations
   def show_all_renting
     return @@trenting
   end
+
+  def edit_person(id, name, lastname, phone)
+    if !@@tperson.at(id).nil?
+      if(name!='' || lastname!='' || phone!='')
+        @@tperson[id].name = name if name!=''
+        @@tperson[id].lastname = lastname if lastname!=''
+        @@tperson[id].phone = phone if phone!=''
+        puts "Updated person with id = #{@@tperson[id].id}."
+        return @@tperson[id]
+      else
+        return false
+      end
+    else
+      puts "Person with id = #{id} does not exist."
+        return false
+    end
+  end
 end

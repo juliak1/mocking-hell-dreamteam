@@ -118,4 +118,19 @@ RSpec.describe 'Operation' do
       expect { operations.show_all_renting }.not_to raise_error
     end
   end
+
+  context '#edit_person' do
+    it 'correctly edits person' do
+      expect { operations.edit_person(0, 'Pawel', 'Kowalski', '111222333') }.not_to raise_error
+    end
+    it 'correctly edits person data with only one value' do
+      expect(operations.edit_person(0, '', 'Nowak', '').to_s).to include('Pawel')
+    end
+    it 'does not edit person when data is invalid' do
+      expect(operations.edit_person(0, '', '', '')).to be false
+    end
+    it 'does not edit person that does not exist' do
+      expect { operations.edit_person(7, 'Pawel', 'Kowalski', '111222333') }.not_to raise_error
+    end
+  end
 end
