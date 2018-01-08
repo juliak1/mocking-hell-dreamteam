@@ -82,4 +82,13 @@ class Operations
     return @@taccount
   end
 
+  def show_car(id)
+    if !@@tcar.at(id).nil?
+      puts "Car with id = #{id}: #{@@tcar[id]}"
+      return @@tcar[id]
+    else
+      puts "Car with id = #{id} does not exist."
+      return false
+    end
+  end
 end
