@@ -15,6 +15,7 @@ RSpec.describe 'Operation' do
       expect { operations.add_person(name, lastname, phone) }.not_to raise_error
     end
   end
+
   context '#add_account' do
     it 'correctly adds a new account' do
       login = 'jkowalski'
@@ -26,6 +27,7 @@ RSpec.describe 'Operation' do
       expect { operations.add_account(login, email, person) }.not_to raise_error
     end
   end
+
   context '#add_renting' do
     it 'correctly adds a new renting' do
       date = '2018-01-07'
@@ -42,6 +44,15 @@ RSpec.describe 'Operation' do
       account = double('Account', id: 0, login: login, email: email, person: person)
       car = double('Car', id: 0, brand: brand, model: model, price: price)
       expect { operations.add_renting(date, days, car, account) }.not_to raise_error
+    end
+  end
+
+  context '#add_car' do
+    it 'correctly adds a new car' do
+      brand = 'Peugeot'
+      model = '206'
+      price = '50'
+      expect { operations.add_car(brand, model, price) }.not_to raise_error
     end
   end
 end

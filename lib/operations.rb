@@ -18,6 +18,7 @@ class Operations
     lastname- #{@@tperson[id].lastname} ,
     phone- #{@@tperson[id].phone}."
   end
+
  def add_account(login, email, person)
     size = @@taccount.size
     id = 0
@@ -28,6 +29,7 @@ class Operations
     login - #{login},
     email - #{email}."
   end
+
  def add_renting(date, days, car, account)
     size = @@trenting.size
     id = 0
@@ -37,5 +39,18 @@ class Operations
     puts "Added new renting:
     date - #{date},
     days - #{days}."
+  end
+
+  def add_car(brand, model, price)
+    id = 0
+    size = @@tcar.size
+    id += 1 while id < size && !@@tcar[id].nil?
+    car = Car.new(id, brand, model, price)
+    @@tcar.insert(id, car)
+    puts "Added new car:
+    id- #{@@tcar[id].id},
+    brand- #{@@tcar[id].brand},
+    model- #{@@tcar[id].model},
+    price- #{@@tcar[id].price}."
   end
 end
