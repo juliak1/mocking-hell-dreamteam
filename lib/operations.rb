@@ -63,4 +63,8 @@ class Operations
       return false
     end
   end
+
+  def show_all_person
+    return @@tperson
+  end
 end

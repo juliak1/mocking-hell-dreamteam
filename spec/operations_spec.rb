@@ -67,4 +67,10 @@ RSpec.describe 'Operation' do
       expect { operations.show_person(2) }.not_to raise_error
     end
   end
+
+  context '#show_all_person' do
+    it 'correctly shows all records in person' do
+      expect { operations.show_all_person }.not_to raise_error
+    end
+  end
 end
