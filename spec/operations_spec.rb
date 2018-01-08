@@ -205,4 +205,14 @@ RSpec.describe 'Operation' do
       expect { operations.remove_car(2) }.not_to raise_error
     end
   end
+
+  context '#remove_renting' do
+    it 'correctly removes renting' do
+      expect { operations.remove_renting(0) }.not_to raise_error
+    end
+    it 'does not remove renting that does not exist' do
+      expect { operations.remove_renting(2) }.not_to raise_error
+    end
+  end
+  
 end

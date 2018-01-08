@@ -194,12 +194,21 @@ class Operations
     end
   end
 
-    def remove_car(id)
+  def remove_car(id)
     if !@@tcar.at(id).nil?
       @@tcar[id] = nil
       puts "Removed car with id = #{id}."
     else
       puts "Car with id = #{id} does not exist."
+    end
+  end
+
+  def remove_renting(id)
+    if !@@trenting.at(id).nil?
+      @@trenting[id] = nil
+      puts "Removed renting with id = #{id}."
+    else
+      puts "Renting with id = #{id} does not exist."
     end
   end
 end

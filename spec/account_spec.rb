@@ -26,6 +26,11 @@ RSpec.describe 'Account' do
       expect(account.login.to_s).to be_a(String).and include(login.to_s)
     end
 
+    it 'returns correct email' do
+      expect(account.email).to eq(email)
+      expect(account.email.to_s).to be_a(String).and include(email.to_s)
+    end
+
     it 'returns correct person' do
       expect(account.person).to eq(person)
       allow(person).to receive(:kind_of?).and_return(Person)
