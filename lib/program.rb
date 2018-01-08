@@ -89,7 +89,9 @@ class Program
           gets.chomp
         when '2'
           system 'clear'
-	#show_account
+          print ('Enter ID: ')
+          id = gets.chomp
+          account = @operations.show_account(id.to_i)
           gets.chomp
         when '3'
           system 'clear'
