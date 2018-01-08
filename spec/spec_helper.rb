@@ -1,12 +1,26 @@
+require 'rspec'
 require 'simplecov'
+
 SimpleCov.start
 
 RSpec.configure do |config|
-  config.expect_with :rspec do |expectations|
-    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
-  end
-
+  config.before(:all) { silence_output }
+  config.after(:all) { enable_output }
   config.mock_with :rspec do |mocks|
-    mocks.verify_partial_doubles = true
+    mocks.verify_doubled_constant_names = true
   end
+end
+
+def silence_output
+  @orig_stderr = $stderr
+  @orig_stdout = $stdout
+  $stderr = File.new('/dev/null', 'w')
+  $stdout = File.new('/dev/null', 'w')
+end
+
+def enable_output
+  $stderr = @orig_stderr
+  $stdout = @orig_stdout
+  @orig_stderr = nil
+  @orig_stdout = nil
 end
