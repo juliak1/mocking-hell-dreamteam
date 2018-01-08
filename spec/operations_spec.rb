@@ -73,4 +73,13 @@ RSpec.describe 'Operation' do
       expect { operations.show_all_person }.not_to raise_error
     end
   end
+
+  context '#show_account' do
+    it 'correctly shows account' do
+      expect { operations.show_account(0) }.not_to raise_error
+    end
+    it 'does not show account that does not exist' do
+      expect { operations.show_account(2) }.not_to raise_error
+    end
+  end
 end

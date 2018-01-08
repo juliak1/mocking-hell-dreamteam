@@ -67,4 +67,15 @@ class Operations
   def show_all_person
     return @@tperson
   end
+
+  def show_account(id)
+    if !@@taccount.at(id).nil?
+      puts "Account with id = #{id}: #{@@taccount[id]}"
+      return @@taccount[id]
+    else
+      puts "Account with id = #{id} does not exist."
+      return false
+    end
+  end
+
 end
