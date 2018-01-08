@@ -9,83 +9,113 @@ class Program
   def initialize
     @operations = start
     loop do
+      #menu
+      #choose
       case gets.chomp
       when '1'
+        #menu2
+        #choose
         case gets.chomp
         when '1'
           system 'clear'
+	#show_all_person
           gets.chomp
         when '2'
           system 'clear'
+	#show_person_id
           gets.chomp
         when '3'
           system 'clear'
+	#add_person
           gets.chomp
         when '4'
           system 'clear'
+	#remove_person
           gets.chomp
         when '5'
           system 'clear'
+	#edit_person
           gets.chomp
         else
           puts ('Choose number 1-5')
         end
       when '2'
+        #menu2
+        #choose
         case gets.chomp
         when '1'
           system 'clear'
+	#show_all_account
           gets.chomp
         when '2'
           system 'clear'
+	#show_account
           gets.chomp
         when '3'
           system 'clear'
+	#add_account
           gets.chomp
         when '4'
           system 'clear'
+	#remove_account
           gets.chomp
         when '5'
           system 'clear'
+	#edit_account
           gets.chomp
         else
           puts ('Choose number 1-5')
         end
       when '3'
+	#menu2
+        #choose
         case gets.chomp
         when '1'
           system 'clear'
+	#show_all_car
           gets.chomp
         when '2'
           system 'clear'
+	#show_car
           gets.chomp
         when '3'
           system 'clear'
+	#add_car
           gets.chomp
         when '4'
           system 'clear'
+	#remove_car
           gets.chomp
         when '5'
           system 'clear'
+	#edit_car
           gets.chomp
         else
           puts ('Choose number 1-5')
         end
       when '4'
+	#menu2
+        #choose
         case gets.chomp
         when '1'
           system 'clear'
+	#show_all_renting
           gets.chomp
         when '2'
           system 'clear'
+	#show_renting
           gets.chomp
         when '3'
           system 'clear'
+	#add_renting
           gets.chomp
         when '4'
           system 'clear'
+	#remove_renting
           gets.chomp
         when '5'
           system 'clear'
+	#edit_renting
           gets.chomp
         else
           puts ('Choose number 1-5')
