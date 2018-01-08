@@ -18,4 +18,14 @@ class Operations
     lastname- #{@@tperson[id].lastname} ,
     phone- #{@@tperson[id].phone}."
   end
+ def add_account(login, email, person)
+    size = @@taccount.size
+    id = 0
+    id += 1 while id < size && !@@taccount[id].nil?
+    account = Account.new(id, login, email, person)
+    @@taccount.insert(id, account)
+    puts "Added new account:
+    login - #{login},
+    email - #{email}."
+  end
 end
