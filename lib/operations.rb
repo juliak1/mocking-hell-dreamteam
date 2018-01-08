@@ -28,4 +28,14 @@ class Operations
     login - #{login},
     email - #{email}."
   end
+ def add_renting(date, days, car, account)
+    size = @@trenting.size
+    id = 0
+    id += 1 while id < size && !@@trenting[id].nil?
+    renting = Renting.new(id, date, days, car, account)
+    @@trenting.insert(id, renting)
+    puts "Added new renting:
+    date - #{date},
+    days - #{days}."
+  end
 end
