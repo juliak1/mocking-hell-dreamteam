@@ -42,3 +42,6 @@ Style/Documentation:
 
 Style/StringLiterals:
   Enabled: true
+
+Style/RedundantReturn:
+  Enabled: false
