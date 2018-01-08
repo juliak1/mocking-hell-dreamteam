@@ -163,4 +163,20 @@ RSpec.describe 'Operation' do
       expect { operations.edit_car(5, 'Nissan', 'GT-R', '200') }.not_to raise_error
     end
   end
+
+  context '#edit_renting' do
+    it 'correctly edits renting' do
+      expect { operations.edit_renting(0, '2018-01-20', '10') }.not_to raise_error
+    end
+    it 'correctly edits renting data with only one value' do
+      expect(operations.edit_renting(0, '', '6').to_s).to include('2018-01-20')
+    end
+    it 'does not edit renting when data is invalid' do
+      expect(operations.edit_renting(0, '', '')).to be false
+    end
+    it 'does not edit renting that does not exist' do
+      expect { operations.edit_renting(5, '2018-01-20', '10') }.not_to raise_error
+    end
+  end 
+  
 end

@@ -159,4 +159,20 @@ class Operations
         return false
     end
   end
+
+  def edit_renting(id, date, days)
+    if !@@trenting.at(id).nil?
+      if(date!='' || days!='')
+        @@trenting[id].date = date if date!=''
+        @@trenting[id].days = days if days!=''
+        puts "Updated renting with id = #{@@trenting[id].id}."
+        return @@trenting[id]
+      else
+        return false
+      end
+    else
+      puts "Renting with id = #{id} does not exist."
+        return false
+    end
+  end
 end
