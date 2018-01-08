@@ -175,4 +175,13 @@ class Operations
         return false
     end
   end
+
+  def remove_person(id)
+    if !@@tperson.at(id).nil?
+      @@tperson[id] = nil
+      puts "Removed person with id = #{id}."
+    else
+      puts "Person with id = #{id} does not exist."
+    end
+  end
 end
