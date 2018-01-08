@@ -95,7 +95,17 @@ class Program
           gets.chomp
         when '3'
           system 'clear'
-	#add_account
+          print ('Login: ')
+          login = gets.chomp
+          print ('Email: ')
+          email = gets.chomp
+          print ('Name: ')
+          name = gets.chomp
+          print ('Lastname: ')
+          lastname = gets.chomp
+          print ('Phone: ')
+          phone = gets.chomp
+          @operations.add_account(login, email, @operations.add_person(name,lastname,phone))
           gets.chomp
         when '4'
           system 'clear'
