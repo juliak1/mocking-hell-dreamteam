@@ -184,4 +184,13 @@ class Operations
       puts "Person with id = #{id} does not exist."
     end
   end
+
+  def remove_account(id)
+    if !@@taccount.at(id).nil?
+      @@taccount[id] = nil
+      puts "Removed account with id = #{id}."
+    else
+      puts "Account with id = #{id} does not exist."
+    end
+  end
 end
