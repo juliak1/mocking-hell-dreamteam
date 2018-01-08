@@ -1,6 +1,8 @@
 require_relative '../lib/operations.rb'
 require_relative '../lib/person.rb'
-
+require_relative '../lib/account.rb'
+require_relative '../lib/car.rb'
+require_relative '../lib/renting.rb'
 
 RSpec.describe 'Operation' do
   subject(:operations) { Operations.new }
