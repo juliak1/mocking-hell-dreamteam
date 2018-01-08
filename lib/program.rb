@@ -45,7 +45,9 @@ class Program
           gets.chomp
         when '4'
           system 'clear'
-	#remove_person
+          print ('Enter ID: ')
+          id = gets.chomp
+          person = @operations.remove_person(id.to_i)
           gets.chomp
         when '5'
           system 'clear'
