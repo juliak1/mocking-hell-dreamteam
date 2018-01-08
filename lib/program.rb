@@ -29,7 +29,9 @@ class Program
           gets.chomp
         when '2'
           system 'clear'
-	#show_person_id
+          print ('Enter ID: ')
+          id = gets.chomp
+          person = @operations.show_person(id.to_i)
           gets.chomp
         when '3'
           system 'clear'
