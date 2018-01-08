@@ -82,4 +82,10 @@ RSpec.describe 'Operation' do
       expect { operations.show_account(2) }.not_to raise_error
     end
   end
+
+  context '#show_all_account' do
+    it 'correctly shows all records in account' do
+      expect { operations.show_all_account }.not_to raise_error
+    end
+  end
 end

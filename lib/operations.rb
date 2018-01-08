@@ -78,4 +78,8 @@ class Operations
     end
   end
 
+  def show_all_account
+    return @@taccount
+  end
+
 end
