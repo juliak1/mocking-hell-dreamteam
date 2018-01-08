@@ -51,7 +51,23 @@ class Program
           gets.chomp
         when '5'
           system 'clear'
-	#edit_person
+          people = @operations.show_all_person
+          i=0
+          while i < people.size
+            unless people.at(i).nil?
+              puts("id #{i}: #{people[i]}")
+            end
+            i += 1
+          end
+          print ('Enter ID: ')
+          id = gets.chomp
+          print ('Name: ')
+          name = gets.chomp
+          print ('Lastname: ')
+          lastname = gets.chomp
+          print ('Phone: ')
+          phone = gets.chomp
+          person = @operations.edit_person(id.to_i, name, lastname, phone)
           gets.chomp
         else
           puts ('Choose number 1-5')
