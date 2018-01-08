@@ -4,7 +4,7 @@
 - [Marta Kotewicz](https://github.com/mkotewicz)
 
 ## Temat: Wypożyczalnia samochodów
-Aplikacja konsolowa która służy do przechowywania danych na temat wypożyczeń samochodów. Posiada opcję dodawania i usuwania rekordów oraz wyświetlania wszystkich i pojedynczych wartości dla: osoby, konta, samochodu i wpożyczenia.
+Aplikacja konsolowa która służy do przechowywania danych na temat wypożyczeń samochodów. Posiada opcję dodawania i usuwania rekordów oraz wyświetlania wszystkich i pojedynczych wartości dla: osoby, konta, samochodu i wypożyczenia.
 ### Travis CI
 
 [![Build Status](https://travis-ci.org/my-rspec/mocking-hell-dreamteam.svg?branch=master)](https://travis-ci.org/my-rspec/mocking-hell-dreamteam)
