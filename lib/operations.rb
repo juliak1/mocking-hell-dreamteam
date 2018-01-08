@@ -53,4 +53,14 @@ class Operations
     model- #{@@tcar[id].model},
     price- #{@@tcar[id].price}."
   end
+
+  def show_person(id)
+    if !@@tperson.at(id).nil?
+      puts "Person with id = #{id}: #{@@tperson[id]}"
+      return @@tperson[id]
+    else
+      puts "Person with id = #{id} does not exist."
+      return false
+    end
+  end
 end

@@ -55,4 +55,16 @@ RSpec.describe 'Operation' do
       expect { operations.add_car(brand, model, price) }.not_to raise_error
     end
   end
+
+  context '#show_person' do
+    it 'correctly shows person' do
+      expect { operations.show_person(0) }.not_to raise_error
+    end
+    it 'correctly shows name of a person' do
+      expect(operations.show_person(0).to_s).to include('Jan')
+    end
+    it 'does not show a person that does not exist' do
+      expect { operations.show_person(2) }.not_to raise_error
+    end
+  end
 end
